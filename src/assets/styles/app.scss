@@ -1,0 +1,29 @@
+html,
+body,
+div,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  font-family: MicrosoftYaHei;
+}
+
+#app {
+  background: url("../images/bg.png") #071b3b no-repeat center;
+  background-size: cover;
+  padding: 0.6rem 0.9rem;
+  color: #f1f1f1;
+  box-sizing: border-box;
+  font-family: MicrosoftYaHei;
+
+  .page-bottom-btns {
+    text-align: center;
+  }
+}

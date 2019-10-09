@@ -1,25 +1,43 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
+import VueRouter from 'vue-router'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
+const routes = [
+  {//首页
+    path: '/',
+    name: 'index',
+    component: () => import('@/views/index.vue'),
+  },
+  {//出错页
+    path: '/errorPage',
+    name: 'errorPage',
+    component: () => import('@/views/errorPage.vue'),
+  },
+  {//去哪玩
+    path: '/travel',
+    name: 'travel',
+    component: () => import('@/views/travel.vue'),
+  },
+  {//美食
+    path: '/food',
+    name: 'food',
+    component: () => import('@/views/food.vue'),
+  },
+  {//企业
+    path: '/companyDesc',
+    name: 'companyDesc',
+    component: () => import('@/views/companyDesc.vue'),
+  },
+
+
+]
+
+// eslint-disable-next-line no-new
+const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
-  ]
+  routes
 })
+
+export default router

@@ -1,0 +1,98 @@
+.el-button {
+  border-radius: 0.38rem;
+  font-size: 0.34rem;
+  color: $text-color;
+  border: 0;
+  line-height: 0.75rem;
+  min-width: 1.82rem;
+  padding: 0 0.2rem;
+  box-sizing: border-box;
+
+  &:focus,
+  &:hover {
+    color: inherit;
+    border-color: inherit;
+    opacity: .8;
+  }
+
+  &.el-button--epgCancel {
+    background: rgb(72, 75, 97);
+  }
+
+  &.el-button--epgActive {
+    background: rgba(252, 185, 3, 1);
+    box-shadow: 0 0 10px #FCB903;
+    color: #3B3B3B;
+  }
+
+  &.el-button--epgTabActive {
+    background: rgba(252, 185, 3, 1);
+    box-shadow: 0 0 10px #FCB903;
+    color: $text-color;
+  }
+
+  &.el-button--epgTabBtn {
+    background: none;
+    color: $text-color;
+  }
+}
+
+.epg-carousel {
+  .epg-carousel-item {
+    .epg-carousel-img {
+      width: 100%;
+    }
+  }
+
+  .el-carousel__item--card.is-in-stage {
+    transform: scale(1);
+  }
+
+  .is-active {
+    // width: 12.56rem;
+
+  }
+}
+
+.el-tabs {
+  .el-tabs__header {
+    .el-tabs__active-bar {
+      display: none;
+    }
+
+    .el-tabs__nav-wrap::after {
+      display: none;
+    }
+
+    .el-tabs__item {
+      background: none;
+      color: $text-color;
+      font-size: 0.36rem;
+      padding: 0 0.2rem;
+      margin-left: 0.1rem;
+      margin-right: 1rem;
+      outline: none;
+
+      // &.is-top:last-child {
+      //   color: rebeccapurple;
+      //   // margin-left: 0.1rem
+      // }
+
+      &.is-active {
+        background: rgba(252, 185, 3, 1);
+        box-shadow: 0 0 10px #FCB903;
+        color: $text-color;
+        border-radius: 0.4rem;
+        height: 0.8rem;
+        line-height: 0.8rem;
+        padding: 0 0.2rem;
+        box-sizing: border-box;
+      }
+
+      &:focus.is-active.is-focus:not(:active) {
+        box-shadow: 0 0 10px #FCB903;
+        border-radius: 0.4rem;
+      }
+    }
+  }
+}
