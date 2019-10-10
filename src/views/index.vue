@@ -8,7 +8,8 @@
               v-for="item in pageConfig"
               :key="item.key">
         <div class="home-item"
-             :class="item.key=='live'?'active':''">
+             :class="item.key=='live'?'active':''"
+             @click="$router.push({name:item.key})">
           <img :src="require(`@/assets/images/home/${item.key}.png`)"
                :alt="item.title"
                class="item-bg">
@@ -25,7 +26,6 @@
 </template>
 <script>
 export default {
-
   data () {
     return {
       homeType: 'hotel',
@@ -55,7 +55,7 @@ export default {
           key: 'companyDesc',
           title: '企业介绍'
         }, {
-          key: 'video',
+          key: 'companyVideo',
           title: '视频宣传'
         }]
       }

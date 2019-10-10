@@ -6,6 +6,10 @@ Vue.use(VueRouter)
 const routes = [
   {//首页
     path: '/',
+    redirect: '/index'
+  },
+  {//首页
+    path: '/index',
     name: 'index',
     component: () => import('@/views/index.vue'),
   },
@@ -13,6 +17,16 @@ const routes = [
     path: '/errorPage',
     name: 'errorPage',
     component: () => import('@/views/errorPage.vue'),
+  },
+  {//直播
+    path: '/live',
+    name: 'live',
+    component: () => import('@/views/live.vue'),
+  },
+  {//点播
+    path: '/demand',
+    name: 'demand',
+    component: () => import('@/views/demand.vue'),
   },
   {//去哪玩
     path: '/travel',
@@ -28,6 +42,16 @@ const routes = [
     path: '/companyDesc',
     name: 'companyDesc',
     component: () => import('@/views/companyDesc.vue'),
+  },
+  {//企业视频
+    path: '/companyVideo',
+    name: 'companyVideo',
+    component: () => import('@/views/companyVideo.vue'),
+  },
+  {//测试页面
+    path: '/test',
+    name: 'test',
+    component: () => import('@/views/test.vue'),
   },
 
 
