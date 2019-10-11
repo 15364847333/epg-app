@@ -8,8 +8,8 @@
               v-for="item in pageConfig"
               :key="item.key">
         <div class="home-item"
-             :class="item.key=='live'?'active':''"
-             @click="$router.push({name:item.key})">
+             @click="$router.push('/'+(item.toPage||item.key))"
+             v-items="item.epgConfig">
           <img :src="require(`@/assets/images/home/${item.key}.png`)"
                :alt="item.title"
                class="item-bg">
@@ -31,7 +31,8 @@ export default {
       homeType: 'hotel',
       normalConfig: [{
         key: 'live',
-        title: '直播'
+        title: '直播',
+        epgConfig: { default: true }
       }, {
         key: 'demand',
         title: '点播'
@@ -41,15 +42,21 @@ export default {
   created () {
     this.homeType = this.$route.query.type || 'hotel'
   },
+  mounted () {
+    //页面加载后，移动到默认焦点
+    this.$service.move(this.$service.pointer)
+  },
   computed: {
     pageConfig () {
       let typeArr = {
         'hotel': [{
           key: 'travel',
-          title: '去哪玩'
+          title: '去哪玩',
+          toPage: 'hotel/travel'
         }, {
           key: 'food',
-          title: '美食'
+          title: '美食',
+          toPage: 'hotel/food'
         }],
         'company': [{
           key: 'companyDesc',
@@ -95,11 +102,10 @@ export default {
           font-size: 0.39rem;
         }
       }
-      &.active {
+      &.focusEpg {
         .item-bg {
           border: 1px solid rgba(255, 170, 0, 0.3);
           transform: scale(1.05);
-          // border-radius: 0.14rem;
         }
       }
     }

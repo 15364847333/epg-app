@@ -19,7 +19,8 @@
     background: rgb(72, 75, 97);
   }
 
-  &.el-button--epgActive {
+  &.el-button--epgActive,
+  &.focusEpg {
     background: rgba(252, 185, 3, 1);
     box-shadow: 0 0 10px #FCB903;
     color: #3B3B3B;
@@ -48,51 +49,48 @@
     transform: scale(1);
   }
 
-  .is-active {
-    // width: 12.56rem;
 
-  }
 }
 
-.el-tabs {
-  .el-tabs__header {
-    .el-tabs__active-bar {
-      display: none;
-    }
+// .el-tabs {
+//   .el-tabs__header {
+//     .el-tabs__active-bar {
+//       display: none;
+//     }
 
-    .el-tabs__nav-wrap::after {
-      display: none;
-    }
+//     .el-tabs__nav-wrap::after {
+//       display: none;
+//     }
 
-    .el-tabs__item {
-      background: none;
-      color: $text-color;
-      font-size: 0.36rem;
-      padding: 0 0.2rem;
-      margin-left: 0.1rem;
-      margin-right: 1rem;
-      outline: none;
+//     .el-tabs__item {
+//       background: none;
+//       color: $text-color;
+//       font-size: 0.36rem;
+//       padding: 0 0.2rem;
+//       margin-left: 0.1rem;
+//       margin-right: 1rem;
+//       outline: none;
 
-      // &.is-top:last-child {
-      //   color: rebeccapurple;
-      //   // margin-left: 0.1rem
-      // }
+//       // &.is-top:last-child {
+//       //   color: rebeccapurple;
+//       //   // margin-left: 0.1rem
+//       // }
 
-      &.is-active {
-        background: rgba(252, 185, 3, 1);
-        box-shadow: 0 0 10px #FCB903;
-        color: $text-color;
-        border-radius: 0.4rem;
-        height: 0.8rem;
-        line-height: 0.8rem;
-        padding: 0 0.2rem;
-        box-sizing: border-box;
-      }
+//       &.is-active {
+//         background: rgba(252, 185, 3, 1);
+//         box-shadow: 0 0 10px #FCB903;
+//         color: $text-color;
+//         border-radius: 0.4rem;
+//         height: 0.8rem;
+//         line-height: 0.8rem;
+//         padding: 0 0.2rem;
+//         box-sizing: border-box;
+//       }
 
-      &:focus.is-active.is-focus:not(:active) {
-        box-shadow: 0 0 10px #FCB903;
-        border-radius: 0.4rem;
-      }
-    }
-  }
-}
+//       &:focus.is-active.is-focus:not(:active) {
+//         box-shadow: 0 0 10px #FCB903;
+//         border-radius: 0.4rem;
+//       }
+//     }
+//   }
+// }

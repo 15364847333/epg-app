@@ -1,54 +1,57 @@
 <template>
   <div class="companyDesc-page">
     <top-wrap></top-wrap>
-    <el-tabs v-model="activeName">
-      <el-tab-pane label="公司介绍"
-                   name="first">
-        <div class="company-box">
-          <div class="left-wrap">
-            <p class="companyName">{{companyName}}</p>
-            <p class="companyDesc">{{companyDesc}}</p>
-          </div>
-          <div class="right-wrap">
-            <img :src="companyDescImg"
+    <div class="tabs-wrap">
+      <div v-for="tab in tabData"
+           :key="tab.name"
+           v-items="tab.epgConfig"
+           @focus="activeTab=tab.name"
+           class="tabs-item"
+           :class="{'activeTab':activeTab==tab.name}"
+           :ref="tab.name+'Tab'">{{tab.label}}</div>
+    </div>
+    <div class="company-box"
+         v-if="activeTab=='first'">
+      <div class="left-wrap">
+        <p class="companyName">{{companyName}}</p>
+        <p class="companyDesc">{{companyDesc}}</p>
+      </div>
+      <div class="right-wrap">
+        <img :src="companyDescImg"
+             alt="">
+      </div>
+    </div>
+    <div class="company-box"
+         v-if="activeTab=='second'">
+      <div class="whole-wrap">
+        <img :src="companyNotesImg"
+             alt="">
+      </div>
+    </div>
+    <div class="company-box"
+         v-if="activeTab=='third'">
+      <swiper :options="swiperOption"
+              class="honor-wrap">
+        <swiper-slide v-for="item in honorData"
+                      :key="item.id">
+          <div class="honorImg">
+            <img :src="item.imgSrc||''"
                  alt="">
           </div>
-        </div>
-      </el-tab-pane>
-      <el-tab-pane label="公司大事记"
-                   name="second">
-        <div class="company-box">
-          <div class="whole-wrap">
-            <img :src="companyNotesImg"
-                 alt="">
-          </div>
-        </div>
-      </el-tab-pane>
-      <el-tab-pane label="荣誉资质"
-                   name="third">
-        <div class="company-box">
-          <swiper :options="swiperOption"
-                  class="honor-wrap">
-            <swiper-slide v-for="item in honorData"
-                          :key="item.id">
-              <div class="honorImg">
-                <img :src="item.imgSrc||''"
-                     alt="">
-              </div>
-            </swiper-slide>
-            <div class="swiper-button-prev"
-                 slot="button-prev"></div>
-            <div class="swiper-button-next"
-                 slot="button-next"></div>
+        </swiper-slide>
+        <div class="swiper-button-prev"
+             slot="button-prev"></div>
+        <div class="swiper-button-next"
+             slot="button-next"></div>
 
-          </swiper>
-        </div>
-      </el-tab-pane>
-    </el-tabs>
+      </swiper>
+    </div>
     <div class="page-bottom-btns">
       <el-button type="epgCancel"
+                 v-items
                  @click="$router.push({name:'companyVideo'})">看看视频宣传</el-button>
       <el-button type="epgCancel"
+                 v-items
                  @click="$router.push({name:'index',query:{type:'company'}})">返回主页</el-button>
     </div>
   </div>
@@ -57,6 +60,22 @@
 export default {
   data () {
     return {
+      activeTab: 'first',
+      tabData: [
+        {
+          name: 'first',
+          label: '公司介绍',
+          epgConfig: { default: true }
+        },
+        {
+          name: 'second',
+          label: '公司大事记'
+        },
+        {
+          name: 'third',
+          label: '荣誉资质'
+        }
+      ],
       activeName: 'first',
       companyName: '亚信科技',
       companyDesc: '亚信科技控股有限公司（简称：亚信科技，股票代码：01675.HK）成立于1993年，是领先的软件产品、解决方案和服务提供商，致力于成为大型企业数字化转型的使能者。解决方案和服务提供商，致力于成为大型企业数字化转型的使能者。',
@@ -76,7 +95,11 @@ export default {
         { id: 3, imgSrc: require('@/assets/images/company/honor.png') },
       ]
     }
-  }
+  },
+  mounted () {
+    //页面加载后，移动到默认焦点
+    this.$service.move(this.$service.pointer)
+  },
 }
 </script>
 <style lang="scss" scoped>

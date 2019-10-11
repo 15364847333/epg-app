@@ -26,4 +26,30 @@ body,
   .page-bottom-btns {
     text-align: center;
   }
+
+  .tabs-wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.4rem;
+
+    .tabs-item {
+      background: none;
+      color: $text-color;
+      font-size: 0.36rem;
+      padding: 0 0.2rem;
+      margin-left: 0.1rem;
+      margin-right: 1rem;
+      outline: none;
+      height: 0.8rem;
+      line-height: 0.8rem;
+
+      &.focusEpg,
+      &.activeTab {
+        background: rgba(252, 185, 3, 1);
+        box-shadow: 0 0 10px #fcb903;
+        border-radius: 0.4rem;
+        color: $text-color;
+      }
+    }
+  }
 }

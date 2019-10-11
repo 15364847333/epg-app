@@ -15,8 +15,10 @@
       <p class="error-desc">本次节目需要按次点播，付费收看<br>点播后立即生效<br>
         该节目在订购有效期内（120小时）<br>可不限次数观看订阅节目内容</p>
       <div class="error-btns-wrap">
-        <el-button type="epgCancel">5元/次</el-button>
-        <el-button type="epgActive">返回</el-button>
+        <el-button type="epgCancel"
+                   v-items>5元/次</el-button>
+        <el-button type="epgCancel"
+                   v-items="{default:true}">返回</el-button>
       </div>
     </div>
   </div>
@@ -30,7 +32,11 @@ export default {
   },
   created () {
     this.errorType = this.$route.query.type || 'net'
-  }
+  },
+  mounted () {
+    //页面加载后，移动到默认焦点
+    this.$service.move(this.$service.pointer)
+  },
 }
 </script>
 <style lang="scss" scoped>

@@ -28,16 +28,21 @@ const routes = [
     name: 'demand',
     component: () => import('@/views/demand.vue'),
   },
-  {//去哪玩
-    path: '/travel',
-    name: 'travel',
-    component: () => import('@/views/travel.vue'),
+  {//酒店页面:去哪玩、美食
+    path: '/hotel/:type',
+    name: 'hotel',
+    component: () => import('@/views/hotel.vue'),
   },
-  {//美食
-    path: '/food',
-    name: 'food',
-    component: () => import('@/views/food.vue'),
-  },
+  // {//去哪玩
+  //   path: '/travel',
+  //   name: 'travel',
+  //   component: () => import('@/views/travel.vue'),
+  // },
+  // {//美食
+  //   path: '/food',
+  //   name: 'food',
+  //   component: () => import('@/views/food.vue'),
+  // },
   {//企业
     path: '/companyDesc',
     name: 'companyDesc',
