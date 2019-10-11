@@ -1,0 +1,438 @@
+{
+  "channelData": [
+    {
+      "id": 1,
+      "name": "CCTV-1",
+      "icon": "",
+      "curView": {
+        "id": 1,
+        "title": "我的真朋友",
+        "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571401694&di=7321118416ec087ac9ddfd455ad74511&imgtype=jpg&er=1&src=http%3A%2F%2F05imgmini.eastday.com%2Fmobile%2F20190522%2F20190522175428_a6f1311b9f62c15018af71dbe7121089_3.jpeg",
+        "timeRange": "18:50 - 19:20"
+      },
+      "timeList": [
+        {
+          "id": 1,
+          "title": "我的真朋友",
+          "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570806452042&di=8a697219ea93ec273e6091d69bf8abfe&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn10113%2F348%2Fw640h508%2F20190110%2F21a0-hrkkweh6984918.jpg",
+          "timeRange": "18:50 - 19:20"
+        },
+        {
+          "id": 2,
+          "title": "越战越勇",
+          "previewImg": "",
+          "timeRange": "19:25 - 20:50"
+        },
+        {
+          "id": 3,
+          "title": "我爱满堂彩",
+          "previewImg": "",
+          "timeRange": "20:59 - 22:20"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "CCTV-2",
+      "icon": "",
+      "curView": {
+        "id": 1,
+        "title": "我的真朋友",
+        "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571401694&di=7321118416ec087ac9ddfd455ad74511&imgtype=jpg&er=1&src=http%3A%2F%2F05imgmini.eastday.com%2Fmobile%2F20190522%2F20190522175428_a6f1311b9f62c15018af71dbe7121089_3.jpeg",
+        "timeRange": "18:50 - 19:20"
+      },
+      "timeList": [
+        {
+          "id": 1,
+          "title": "我的真朋友",
+          "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570806452042&di=8a697219ea93ec273e6091d69bf8abfe&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn10113%2F348%2Fw640h508%2F20190110%2F21a0-hrkkweh6984918.jpg",
+          "timeRange": "18:50 - 19:20"
+        },
+        {
+          "id": 2,
+          "title": "越战越勇",
+          "previewImg": "",
+          "timeRange": "19:25 - 20:50"
+        },
+        {
+          "id": 3,
+          "title": "我爱满堂彩",
+          "previewImg": "",
+          "timeRange": "20:59 - 22:20"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "CCTV-3",
+      "icon": "",
+      "curView": {
+        "id": 1,
+        "title": "我的真朋友",
+        "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571401694&di=7321118416ec087ac9ddfd455ad74511&imgtype=jpg&er=1&src=http%3A%2F%2F05imgmini.eastday.com%2Fmobile%2F20190522%2F20190522175428_a6f1311b9f62c15018af71dbe7121089_3.jpeg",
+        "timeRange": "18:50 - 19:20"
+      },
+      "timeList": [
+        {
+          "id": 1,
+          "title": "我的真朋友",
+          "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570806452042&di=8a697219ea93ec273e6091d69bf8abfe&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn10113%2F348%2Fw640h508%2F20190110%2F21a0-hrkkweh6984918.jpg",
+          "timeRange": "18:50 - 19:20"
+        },
+        {
+          "id": 2,
+          "title": "越战越勇",
+          "previewImg": "",
+          "timeRange": "19:25 - 20:50"
+        },
+        {
+          "id": 3,
+          "title": "我爱满堂彩",
+          "previewImg": "",
+          "timeRange": "20:59 - 22:20"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "CCTV-4",
+      "icon": "",
+      "curView": {
+        "id": 1,
+        "title": "我的真朋友",
+        "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571401694&di=7321118416ec087ac9ddfd455ad74511&imgtype=jpg&er=1&src=http%3A%2F%2F05imgmini.eastday.com%2Fmobile%2F20190522%2F20190522175428_a6f1311b9f62c15018af71dbe7121089_3.jpeg",
+        "timeRange": "18:50 - 19:20"
+      },
+      "timeList": [
+        {
+          "id": 1,
+          "title": "我的真朋友",
+          "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570806452042&di=8a697219ea93ec273e6091d69bf8abfe&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn10113%2F348%2Fw640h508%2F20190110%2F21a0-hrkkweh6984918.jpg",
+          "timeRange": "18:50 - 19:20"
+        },
+        {
+          "id": 2,
+          "title": "越战越勇",
+          "previewImg": "",
+          "timeRange": "19:25 - 20:50"
+        },
+        {
+          "id": 3,
+          "title": "我爱满堂彩",
+          "previewImg": "",
+          "timeRange": "20:59 - 22:20"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "CCTV-5",
+      "icon": "",
+      "curView": {
+        "id": 1,
+        "title": "我的真朋友",
+        "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571401694&di=7321118416ec087ac9ddfd455ad74511&imgtype=jpg&er=1&src=http%3A%2F%2F05imgmini.eastday.com%2Fmobile%2F20190522%2F20190522175428_a6f1311b9f62c15018af71dbe7121089_3.jpeg",
+        "timeRange": "18:50 - 19:20"
+      },
+      "timeList": [
+        {
+          "id": 1,
+          "title": "我的真朋友",
+          "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570806452042&di=8a697219ea93ec273e6091d69bf8abfe&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn10113%2F348%2Fw640h508%2F20190110%2F21a0-hrkkweh6984918.jpg",
+          "timeRange": "18:50 - 19:20"
+        },
+        {
+          "id": 2,
+          "title": "越战越勇",
+          "previewImg": "",
+          "timeRange": "19:25 - 20:50"
+        },
+        {
+          "id": 3,
+          "title": "我爱满堂彩",
+          "previewImg": "",
+          "timeRange": "20:59 - 22:20"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "CCTV-6",
+      "icon": "",
+      "curView": {
+        "id": 1,
+        "title": "我的真朋友",
+        "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571401694&di=7321118416ec087ac9ddfd455ad74511&imgtype=jpg&er=1&src=http%3A%2F%2F05imgmini.eastday.com%2Fmobile%2F20190522%2F20190522175428_a6f1311b9f62c15018af71dbe7121089_3.jpeg",
+        "timeRange": "18:50 - 19:20"
+      },
+      "timeList": [
+        {
+          "id": 1,
+          "title": "我的真朋友",
+          "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570806452042&di=8a697219ea93ec273e6091d69bf8abfe&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn10113%2F348%2Fw640h508%2F20190110%2F21a0-hrkkweh6984918.jpg",
+          "timeRange": "18:50 - 19:20"
+        },
+        {
+          "id": 2,
+          "title": "越战越勇",
+          "previewImg": "",
+          "timeRange": "19:25 - 20:50"
+        },
+        {
+          "id": 3,
+          "title": "我爱满堂彩",
+          "previewImg": "",
+          "timeRange": "20:59 - 22:20"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "CCTV-7",
+      "icon": "",
+      "curView": {
+        "id": 1,
+        "title": "我的真朋友",
+        "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571401694&di=7321118416ec087ac9ddfd455ad74511&imgtype=jpg&er=1&src=http%3A%2F%2F05imgmini.eastday.com%2Fmobile%2F20190522%2F20190522175428_a6f1311b9f62c15018af71dbe7121089_3.jpeg",
+        "timeRange": "18:50 - 19:20"
+      },
+      "timeList": [
+        {
+          "id": 1,
+          "title": "我的真朋友",
+          "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570806452042&di=8a697219ea93ec273e6091d69bf8abfe&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn10113%2F348%2Fw640h508%2F20190110%2F21a0-hrkkweh6984918.jpg",
+          "timeRange": "18:50 - 19:20"
+        },
+        {
+          "id": 2,
+          "title": "越战越勇",
+          "previewImg": "",
+          "timeRange": "19:25 - 20:50"
+        },
+        {
+          "id": 3,
+          "title": "我爱满堂彩",
+          "previewImg": "",
+          "timeRange": "20:59 - 22:20"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "CCTV-8",
+      "icon": "",
+      "curView": {
+        "id": 1,
+        "title": "我的真朋友",
+        "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571401694&di=7321118416ec087ac9ddfd455ad74511&imgtype=jpg&er=1&src=http%3A%2F%2F05imgmini.eastday.com%2Fmobile%2F20190522%2F20190522175428_a6f1311b9f62c15018af71dbe7121089_3.jpeg",
+        "timeRange": "18:50 - 19:20"
+      },
+      "timeList": [
+        {
+          "id": 1,
+          "title": "我的真朋友",
+          "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570806452042&di=8a697219ea93ec273e6091d69bf8abfe&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn10113%2F348%2Fw640h508%2F20190110%2F21a0-hrkkweh6984918.jpg",
+          "timeRange": "18:50 - 19:20"
+        },
+        {
+          "id": 2,
+          "title": "越战越勇",
+          "previewImg": "",
+          "timeRange": "19:25 - 20:50"
+        },
+        {
+          "id": 3,
+          "title": "我爱满堂彩",
+          "previewImg": "",
+          "timeRange": "20:59 - 22:20"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "CCTV-9",
+      "icon": "",
+      "curView": {
+        "id": 1,
+        "title": "我的真朋友",
+        "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571401694&di=7321118416ec087ac9ddfd455ad74511&imgtype=jpg&er=1&src=http%3A%2F%2F05imgmini.eastday.com%2Fmobile%2F20190522%2F20190522175428_a6f1311b9f62c15018af71dbe7121089_3.jpeg",
+        "timeRange": "18:50 - 19:20"
+      },
+      "timeList": [
+        {
+          "id": 1,
+          "title": "我的真朋友",
+          "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570806452042&di=8a697219ea93ec273e6091d69bf8abfe&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn10113%2F348%2Fw640h508%2F20190110%2F21a0-hrkkweh6984918.jpg",
+          "timeRange": "18:50 - 19:20"
+        },
+        {
+          "id": 2,
+          "title": "越战越勇",
+          "previewImg": "",
+          "timeRange": "19:25 - 20:50"
+        },
+        {
+          "id": 3,
+          "title": "我爱满堂彩",
+          "previewImg": "",
+          "timeRange": "20:59 - 22:20"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "CCTV-10",
+      "icon": "",
+      "curView": {
+        "id": 1,
+        "title": "我的真朋友",
+        "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571401694&di=7321118416ec087ac9ddfd455ad74511&imgtype=jpg&er=1&src=http%3A%2F%2F05imgmini.eastday.com%2Fmobile%2F20190522%2F20190522175428_a6f1311b9f62c15018af71dbe7121089_3.jpeg",
+        "timeRange": "18:50 - 19:20"
+      },
+      "timeList": [
+        {
+          "id": 1,
+          "title": "我的真朋友",
+          "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570806452042&di=8a697219ea93ec273e6091d69bf8abfe&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn10113%2F348%2Fw640h508%2F20190110%2F21a0-hrkkweh6984918.jpg",
+          "timeRange": "18:50 - 19:20"
+        },
+        {
+          "id": 2,
+          "title": "越战越勇",
+          "previewImg": "",
+          "timeRange": "19:25 - 20:50"
+        },
+        {
+          "id": 3,
+          "title": "我爱满堂彩",
+          "previewImg": "",
+          "timeRange": "20:59 - 22:20"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "CCTV-11",
+      "icon": "",
+      "curView": {
+        "id": 1,
+        "title": "我的真朋友",
+        "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571401694&di=7321118416ec087ac9ddfd455ad74511&imgtype=jpg&er=1&src=http%3A%2F%2F05imgmini.eastday.com%2Fmobile%2F20190522%2F20190522175428_a6f1311b9f62c15018af71dbe7121089_3.jpeg",
+        "timeRange": "18:50 - 19:20"
+      },
+      "timeList": [
+        {
+          "id": 1,
+          "title": "我的真朋友",
+          "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570806452042&di=8a697219ea93ec273e6091d69bf8abfe&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn10113%2F348%2Fw640h508%2F20190110%2F21a0-hrkkweh6984918.jpg",
+          "timeRange": "18:50 - 19:20"
+        },
+        {
+          "id": 2,
+          "title": "越战越勇",
+          "previewImg": "",
+          "timeRange": "19:25 - 20:50"
+        },
+        {
+          "id": 3,
+          "title": "我爱满堂彩",
+          "previewImg": "",
+          "timeRange": "20:59 - 22:20"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "CCTV-12",
+      "icon": "",
+      "curView": {
+        "id": 1,
+        "title": "我的真朋友",
+        "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571401694&di=7321118416ec087ac9ddfd455ad74511&imgtype=jpg&er=1&src=http%3A%2F%2F05imgmini.eastday.com%2Fmobile%2F20190522%2F20190522175428_a6f1311b9f62c15018af71dbe7121089_3.jpeg",
+        "timeRange": "18:50 - 19:20"
+      },
+      "timeList": [
+        {
+          "id": 1,
+          "title": "我的真朋友",
+          "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570806452042&di=8a697219ea93ec273e6091d69bf8abfe&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn10113%2F348%2Fw640h508%2F20190110%2F21a0-hrkkweh6984918.jpg",
+          "timeRange": "18:50 - 19:20"
+        },
+        {
+          "id": 2,
+          "title": "越战越勇",
+          "previewImg": "",
+          "timeRange": "19:25 - 20:50"
+        },
+        {
+          "id": 3,
+          "title": "我爱满堂彩",
+          "previewImg": "",
+          "timeRange": "20:59 - 22:20"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "CCTV-13",
+      "icon": "",
+      "curView": {
+        "id": 1,
+        "title": "我的真朋友",
+        "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571401694&di=7321118416ec087ac9ddfd455ad74511&imgtype=jpg&er=1&src=http%3A%2F%2F05imgmini.eastday.com%2Fmobile%2F20190522%2F20190522175428_a6f1311b9f62c15018af71dbe7121089_3.jpeg",
+        "timeRange": "18:50 - 19:20"
+      },
+      "timeList": [
+        {
+          "id": 1,
+          "title": "我的真朋友",
+          "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570806452042&di=8a697219ea93ec273e6091d69bf8abfe&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn10113%2F348%2Fw640h508%2F20190110%2F21a0-hrkkweh6984918.jpg",
+          "timeRange": "18:50 - 19:20"
+        },
+        {
+          "id": 2,
+          "title": "越战越勇",
+          "previewImg": "",
+          "timeRange": "19:25 - 20:50"
+        },
+        {
+          "id": 3,
+          "title": "我爱满堂彩",
+          "previewImg": "",
+          "timeRange": "20:59 - 22:20"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "CCTV-14",
+      "icon": "",
+      "curView": {
+        "id": 1,
+        "title": "我的真朋友",
+        "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571401694&di=7321118416ec087ac9ddfd455ad74511&imgtype=jpg&er=1&src=http%3A%2F%2F05imgmini.eastday.com%2Fmobile%2F20190522%2F20190522175428_a6f1311b9f62c15018af71dbe7121089_3.jpeg",
+        "timeRange": "18:50 - 19:20"
+      },
+      "timeList": [
+        {
+          "id": 1,
+          "title": "我的真朋友",
+          "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570806452042&di=8a697219ea93ec273e6091d69bf8abfe&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn10113%2F348%2Fw640h508%2F20190110%2F21a0-hrkkweh6984918.jpg",
+          "timeRange": "18:50 - 19:20"
+        },
+        {
+          "id": 2,
+          "title": "越战越勇",
+          "previewImg": "",
+          "timeRange": "19:25 - 20:50"
+        },
+        {
+          "id": 3,
+          "title": "我爱满堂彩",
+          "previewImg": "",
+          "timeRange": "20:59 - 22:20"
+        }
+      ]
+    }
+  ]
+}

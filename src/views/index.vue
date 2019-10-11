@@ -75,11 +75,13 @@ export default {
 .home-page {
   .home-list {
     margin-top: 1rem;
+    height: 6.9rem;
     .home-item {
       position: relative;
       display: flex;
       .item-bg {
         width: 4rem;
+        height: 100%;
         border-radius: 0.14rem;
       }
       .item-desc {

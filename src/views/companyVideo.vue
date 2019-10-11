@@ -252,7 +252,7 @@ export default {
         right: 0.3rem;
         top: 0.3rem;
         padding-left: 1rem;
-        background: url("../assets/icons/company/back.png") no-repeat center;
+        background: url("../assets/icons/back.png") no-repeat center;
         background-size: 0.3rem;
         font-size: 0.32rem;
         color: #eee;

@@ -8,6 +8,11 @@ li {
   padding: 0;
 }
 
+ul,
+li {
+  list-style: none;
+}
+
 html,
 body,
 #app {
@@ -22,6 +27,7 @@ body,
   color: #f1f1f1;
   box-sizing: border-box;
   font-family: MicrosoftYaHei;
+  overflow: hidden;
 
   .page-bottom-btns {
     text-align: center;
@@ -49,6 +55,49 @@ body,
         box-shadow: 0 0 10px #fcb903;
         border-radius: 0.4rem;
         color: $text-color;
+      }
+    }
+  }
+
+  .top-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #eeeeee;
+    margin-bottom: 0.5rem;
+
+    .top-title {
+      font-size: 0.48rem;
+    }
+
+    .top-right {
+      display: flex;
+      align-items: center;
+
+      .right-text {
+        font-size: 0.36rem;
+      }
+
+      .right-icon {
+        width: 1rem;
+
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+
+      .back-icon {
+        padding-left: 0.5rem;
+        background: url("../icons/back.png") no-repeat left center;
+        background-size: 0.3rem;
+        font-size: 0.32rem;
+        color: #eee;
+        cursor: pointer;
+
+        &.focusEpg {
+          opacity: 0.6;
+        }
       }
     }
   }
