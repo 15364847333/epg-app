@@ -4,62 +4,61 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
-  {//首页
+  {//默认进入
     path: '/',
     redirect: '/index'
   },
-  {//首页
+  {//酒店首页
     path: '/index',
     name: 'index',
     component: () => import('@/views/index.vue'),
   },
-  {//出错页
-    path: '/errorPage',
-    name: 'errorPage',
-    component: () => import('@/views/errorPage.vue'),
-  },
-  {//直播
+  /************************************************* 视频相关 *************************************************/
+  {//直播首页
     path: '/live',
     name: 'live',
-    component: () => import('@/views/live.vue'),
+    component: () => import('@/views/video/live.vue'),
   },
-  {//点播
+  {//点播首页
     path: '/demand',
     name: 'demand',
-    component: () => import('@/views/demand.vue'),
+    component: () => import('@/views/video/demand/index.vue'),
   },
+  {//点播电视剧
+    path: '/drama',
+    name: 'drama',
+    component: () => import('@/views/video/demand/drama.vue'),
+  },
+  {//点播电影
+    path: '/film',
+    name: 'film',
+    component: () => import('@/views/video/demand/film.vue'),
+  },
+  /************************************************* 酒店相关 *************************************************/
+
   {//酒店页面:去哪玩、美食
     path: '/hotel/:type',
     name: 'hotel',
-    component: () => import('@/views/hotel.vue'),
+    component: () => import('@/views/hotel/index.vue'),
   },
-  // {//去哪玩
-  //   path: '/travel',
-  //   name: 'travel',
-  //   component: () => import('@/views/travel.vue'),
-  // },
-  // {//美食
-  //   path: '/food',
-  //   name: 'food',
-  //   component: () => import('@/views/food.vue'),
-  // },
+  /************************************************* 企业相关 *************************************************/
+
   {//企业
     path: '/companyDesc',
     name: 'companyDesc',
-    component: () => import('@/views/companyDesc.vue'),
+    component: () => import('@/views/company/companyDesc.vue'),
   },
   {//企业视频
     path: '/companyVideo',
     name: 'companyVideo',
-    component: () => import('@/views/companyVideo.vue'),
+    component: () => import('@/views/company/companyVideo.vue'),
   },
-  {//测试页面
-    path: '/test',
-    name: 'test',
-    component: () => import('@/views/test.vue'),
-  },
-
-
+  /************************************************* 出错页 *************************************************/
+  {//出错页
+    path: '/errorPage',
+    name: 'errorPage',
+    component: () => import('@/views/errorPage.vue'),
+  }
 ]
 
 // eslint-disable-next-line no-new

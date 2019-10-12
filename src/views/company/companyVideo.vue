@@ -183,7 +183,8 @@ export default {
           position: absolute;
           width: 1.26rem;
           height: 1.26rem;
-          background: url("../assets/icons/company/play.png") no-repeat center;
+          background: url("../../assets/icons/company/play.png") no-repeat
+            center;
           background-size: cover;
           left: 50%;
           top: 50%;
@@ -213,12 +214,12 @@ export default {
       height: 0.36rem;
     }
     .swiper-button-prev {
-      background-image: url("../assets/icons/company/prev.png");
+      background-image: url("../../assets/icons/company/prev.png");
       top: 0.6rem;
       left: 50%;
     }
     .swiper-button-next {
-      background-image: url("../assets/icons/company/next.png");
+      background-image: url("../../assets/icons/company/next.png");
       bottom: 0.3rem;
       left: 50%;
       top: auto;
@@ -242,7 +243,7 @@ export default {
         position: absolute;
         width: 1.26rem;
         height: 1.26rem;
-        background: url("../assets/icons/company/play.png") no-repeat center;
+        background: url("../../assets/icons/company/play.png") no-repeat center;
         background-size: cover;
         left: 50%;
         top: 50%;
@@ -252,7 +253,7 @@ export default {
         right: 0.3rem;
         top: 0.3rem;
         padding-left: 1rem;
-        background: url("../assets/icons/back.png") no-repeat center;
+        background: url("../../assets/icons/back.png") no-repeat center;
         background-size: 0.3rem;
         font-size: 0.32rem;
         color: #eee;

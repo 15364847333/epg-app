@@ -79,10 +79,12 @@ export default {
     .home-item {
       position: relative;
       display: flex;
+      width: 4rem;
+      border-radius: 0.14rem;
+      overflow: hidden;
       .item-bg {
-        width: 4rem;
+        width: 100%;
         height: 100%;
-        border-radius: 0.14rem;
       }
       .item-desc {
         position: absolute;
@@ -105,10 +107,8 @@ export default {
         }
       }
       &.focusEpg {
-        .item-bg {
-          border: 1px solid rgba(255, 170, 0, 0.3);
-          transform: scale(1.05);
-        }
+        border: 1px solid rgba(255, 170, 0, 0.3);
+        transform: scale(1.05);
       }
     }
   }

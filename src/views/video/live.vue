@@ -21,6 +21,7 @@
                  v-items="item.epgConfig"
                  @click="curChannel=item"
                  @focus="activeIndex=index"
+                 @right="rightChannel"
                  :ref="'channel'+index">
               <img :src="item.icon||require('@/assets/icons/channel.png')"
                    alt="">
@@ -31,7 +32,7 @@
         <div class="btns-wrap">
           <el-button type="epgCancel"
                      v-items
-                     ref="prePage">上一页</el-button>
+                     ref="prevPage">上一页</el-button>
           <el-button type="epgCancel"
                      v-items
                      ref="nextPage">下一页</el-button>
@@ -40,7 +41,8 @@
       <div class="channel-view">
         <div class="preview-wrap"
              v-items
-             @right="movePreview">
+             @right="movePreview"
+             ref="preview">
           <img :src="curChannel.curView&&curChannel.curView.previewImg"
                alt="">
         </div>
@@ -69,7 +71,6 @@ export default {
   },
   created () {
     this.getLiveData();
-
   },
 
   computed: {
@@ -85,11 +86,18 @@ export default {
         this.$service.move(this.$service.pointer)
       })
     },
-    movePreview () {
-      if (this.activeIndex < 13) {
+    movePreview () {//预览区域 右移焦点 
+      if (this.activeIndex < 13) {//移到频道列表
         this.$service.move(this.$refs['channel' + (this.activeIndex + 1)][0])
-      } else {
+      } else {//移到‘上一页’
         this.$service.move(this.$refs.prevPage)
+      }
+    },
+    rightChannel () {//频道列表 右移焦点 
+      if (this.activeIndex % 2 == 0) {
+        this.$service.move('right')
+      } else {
+        this.$service.move(this.$refs.preview)
       }
     }
   }
@@ -138,8 +146,11 @@ export default {
     .channel-view {
       .preview-wrap {
         margin-bottom: 0.8rem;
+        width: 8.4rem;
+        height: 4.55rem;
+        border: 1px solid #eee;
         img {
-          width: 8.4rem;
+          width: 100%;
         }
         &.focusEpg {
           img {

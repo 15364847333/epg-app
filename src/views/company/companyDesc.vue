@@ -167,11 +167,11 @@ export default {
         height: 0.85rem;
       }
       .swiper-button-prev {
-        background-image: url("../assets/icons/company/prevIcon.png");
+        background-image: url("../../assets/icons/company/prevIcon.png");
         left: 0.2rem;
       }
       .swiper-button-next {
-        background-image: url("../assets/icons/company/nextIcon.png");
+        background-image: url("../../assets/icons/company/nextIcon.png");
         right: 0.2rem;
       }
     }
