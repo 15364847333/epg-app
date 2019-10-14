@@ -5,7 +5,8 @@
       <div class="top-right">
         <span class="back-icon right-text"
               v-items
-              @click="$router.go(-1)">
+              @click="$router.go(-1)"
+              ref="backPage">
           返回
         </span>
       </div>
@@ -21,6 +22,7 @@
                  v-items="item.epgConfig"
                  @click="curChannel=item"
                  @focus="activeIndex=index"
+                 @left="leftChannel"
                  @right="rightChannel"
                  :ref="'channel'+index">
               <img :src="item.icon||require('@/assets/icons/channel.png')"
@@ -30,12 +32,12 @@
           </el-col>
         </el-row>
         <div class="btns-wrap">
-          <el-button type="epgCancel"
-                     v-items
-                     ref="prevPage">上一页</el-button>
-          <el-button type="epgCancel"
-                     v-items
-                     ref="nextPage">下一页</el-button>
+          <button class="epg-button epgCancel"
+                  v-items
+                  ref="prevPage">上一页</button>
+          <button class="epg-button epgCancel"
+                  v-items
+                  ref="nextPage">下一页</button>
         </div>
       </div>
       <div class="channel-view">
@@ -72,7 +74,6 @@ export default {
   created () {
     this.getLiveData();
   },
-
   computed: {
   },
   methods: {
@@ -92,6 +93,9 @@ export default {
       } else {//移到‘上一页’
         this.$service.move(this.$refs.prevPage)
       }
+    },
+    leftChannel () {//频道列表 左移焦点
+      this.activeIndex > 0 ? this.$service.move(this.$refs['channel' + (this.activeIndex - 1)][0]) : this.$service.move(this.$refs.backPage)
     },
     rightChannel () {//频道列表 右移焦点 
       if (this.activeIndex % 2 == 0) {
@@ -137,10 +141,15 @@ export default {
         }
       }
       .btns-wrap {
-        margin-top: 0.5rem;
+        margin-top: 0.4rem;
         display: flex;
         justify-content: center;
         align-items: center;
+        .epg-button {
+          & + .epg-button {
+            margin-left: 0.4rem;
+          }
+        }
       }
     }
     .channel-view {
@@ -148,9 +157,10 @@ export default {
         margin-bottom: 0.8rem;
         width: 8.4rem;
         height: 4.55rem;
-        border: 1px solid #eee;
+
         img {
           width: 100%;
+          height: 100%;
         }
         &.focusEpg {
           img {

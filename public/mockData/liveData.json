@@ -6,22 +6,22 @@
       "icon": "",
       "curView": {
         "id": 1,
-        "title": "我的真朋友",
-        "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571401694&di=7321118416ec087ac9ddfd455ad74511&imgtype=jpg&er=1&src=http%3A%2F%2F05imgmini.eastday.com%2Fmobile%2F20190522%2F20190522175428_a6f1311b9f62c15018af71dbe7121089_3.jpeg",
-        "timeRange": "18:50 - 19:20"
+        "title": "新闻联播",
+        "previewImg": "http://pic2.16pic.com/00/50/96/16pic_5096230_b.jpg",
+        "timeRange": "19:00 - 19:30"
       },
       "timeList": [
         {
           "id": 1,
-          "title": "我的真朋友",
-          "previewImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570806452042&di=8a697219ea93ec273e6091d69bf8abfe&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn10113%2F348%2Fw640h508%2F20190110%2F21a0-hrkkweh6984918.jpg",
-          "timeRange": "18:50 - 19:20"
+          "title": "新闻联播",
+          "previewImg": "http://pic2.16pic.com/00/50/96/16pic_5096230_b.jpg",
+          "timeRange": "19:00 - 19:30"
         },
         {
           "id": 2,
           "title": "越战越勇",
           "previewImg": "",
-          "timeRange": "19:25 - 20:50"
+          "timeRange": "19:35 - 20:50"
         },
         {
           "id": 3,

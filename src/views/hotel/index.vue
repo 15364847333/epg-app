@@ -43,14 +43,14 @@
       </swiper>
     </div>
     <div class="page-bottom-btns">
-      <el-button type="epgCancel"
-                 v-items
-                 @click="$router.push({name:'food'})"
-                 ref="toFood">看看美食</el-button>
-      <el-button type="epgCancel"
-                 v-items
-                 @click="$router.push({name:'index',query:{type:'hotel'}})"
-                 ref="toHome">返回主页</el-button>
+      <button class="epg-button epgCancel"
+              v-items
+              @click="$router.push({name:'food'})"
+              ref="toFood">看看美食</button>
+      <button class="epg-button epgCancel"
+              v-items
+              @click="$router.push({name:'index',query:{type:'hotel'}})"
+              ref="toHome">返回主页</button>
     </div>
   </div>
 </template>

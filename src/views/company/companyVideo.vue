@@ -2,56 +2,58 @@
   <div class="companyVideo-page">
     <div v-show="!fullVideoVisiable">
       <top-wrap></top-wrap>
-      <el-tabs v-model="activeName">
-        <el-tab-pane label="宣传片"
-                     name="first">
-          <div class="swiper-wrap">
-            <swiper :options="swiperOptionTop"
-                    class="gallery-left"
-                    ref="swiperLeft">
-              <swiper-slide v-for="item in videoList"
-                            :key="item.id"
-                            class="videoTopItem">
-                <video :src="item.videoSrc"
-                       controls="controls"
-                       :id="'video'+item.id">
-                  您的浏览器不支持 video 标签。
-                </video>
-                <div class="playIcon"
-                     @click="FullScreen('video'+item.id,item.videoSrc)"></div>
-              </swiper-slide>
-            </swiper>
-            <swiper :options="swiperOptionThumbs"
-                    class="gallery-thumbs"
-                    ref="swiperThumbs">
-              <swiper-slide v-for="item in videoList"
-                            :key="item.id"
-                            class="videoItem">
-                <img :src="item.imgSrc"
-                     alt="">
-              </swiper-slide>
-              <div class="swiper-button-next"
-                   slot="button-next"></div>
-              <div class="swiper-button-prev"
-                   slot="button-prev"></div>
+      <div class="tabs-wrap">
+        <div v-for="tab in tabData"
+             :key="tab.name"
+             v-items="tab.epgConfig"
+             @focus="activeTab=tab.name"
+             class="tabs-item"
+             :class="{'activeTab':activeTab==tab.name}"
+             :ref="tab.name+'Tab'">{{tab.label}}</div>
+      </div>
+      <div class="swiper-wrap"
+           v-if="activeTab=='first'">
+        <swiper :options="swiperOptionTop"
+                class="gallery-left"
+                ref="swiperLeft">
+          <swiper-slide v-for="item in videoList"
+                        :key="item.id"
+                        class="videoTopItem">
+            <video :src="item.videoSrc"
+                   controls="controls"
+                   :id="'video'+item.id">
+              您的浏览器不支持 video 标签。
+            </video>
+            <div class="playIcon"
+                 @click="FullScreen('video'+item.id,item.videoSrc)"></div>
+          </swiper-slide>
+        </swiper>
+        <swiper :options="swiperOptionThumbs"
+                class="gallery-thumbs"
+                ref="swiperThumbs">
+          <swiper-slide v-for="item in videoList"
+                        :key="item.id"
+                        class="videoItem">
+            <img :src="item.imgSrc"
+                 alt="">
+          </swiper-slide>
+          <div class="swiper-button-next"
+               slot="button-next"></div>
+          <div class="swiper-button-prev"
+               slot="button-prev"></div>
 
-            </swiper>
-          </div>
-
-        </el-tab-pane>
-        <el-tab-pane label="公司年会"
-                     name="second">
-          <div class="company-box">
-          </div>
-        </el-tab-pane>
-      </el-tabs>
+        </swiper>
+      </div>
+      <div class="company-box"
+           v-if="activeTab=='second'">
+      </div>
       <div class="page-bottom-btns">
-        <el-button type="epgCancel"
-                   v-items
-                   @click="$router.push({name:'companyDesc'})">看看公司介绍</el-button>
-        <el-button type="epgCancel"
-                   v-items
-                   @click="$router.push({name:'index',query:{type:'company'}})">返回主页</el-button>
+        <button class="epg-button epgCancel"
+                v-items
+                @click="$router.push({name:'companyDesc'})">看看公司介绍</button>
+        <button class="epg-button epgCancel"
+                v-items
+                @click="$router.push({ name: 'index', query: { type: 'company' } })">返回主页</button>
       </div>
     </div>
     <div class="fullVideoWrap"
@@ -72,7 +74,18 @@
 export default {
   data () {
     return {
-      activeName: 'first',
+      activeTab: 'first',
+      tabData: [
+        {
+          name: 'first',
+          label: '宣传片',
+          epgConfig: { default: true }
+        },
+        {
+          name: 'second',
+          label: '公司年会'
+        }
+      ],
       fullVideoSrc: '',
       fullVideoVisiable: false,
       videoList: [
@@ -127,6 +140,8 @@ export default {
       const swiperThumbs = this.$refs.swiperThumbs.swiper
       swiperLeft.controller.control = swiperThumbs
       swiperThumbs.controller.control = swiperLeft
+      //页面加载后，移动到默认焦点
+      this.$service.move(this.$service.pointer)
     })
   },
   methods: {
@@ -160,6 +175,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 .companyVideo-page {
+  .tabs-item {
+    min-width: 1.7rem;
+    margin-right: 0 !important;
+    text-align: center;
+  }
   .swiper-wrap {
     display: flex;
     height: 6.08rem;

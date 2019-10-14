@@ -58,6 +58,11 @@ const routes = [
     path: '/errorPage',
     name: 'errorPage',
     component: () => import('@/views/errorPage.vue'),
+  },
+  {//测试
+    path: '/test',
+    name: 'test',
+    component: () => import('@/views/test.vue'),
   }
 ]
 

@@ -18,6 +18,7 @@ body,
 #app {
   height: 100%;
   font-family: MicrosoftYaHei;
+  overflow: hidden;
 }
 
 #app {
@@ -26,38 +27,6 @@ body,
   padding: 0.6rem 0.9rem;
   color: #f1f1f1;
   box-sizing: border-box;
-  font-family: MicrosoftYaHei;
-  overflow: hidden;
-
-  .page-bottom-btns {
-    text-align: center;
-  }
-
-  .tabs-wrap {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.4rem;
-
-    .tabs-item {
-      background: none;
-      color: $text-color;
-      font-size: 0.36rem;
-      padding: 0 0.2rem;
-      margin-left: 0.1rem;
-      margin-right: 1rem;
-      outline: none;
-      height: 0.8rem;
-      line-height: 0.8rem;
-
-      &.focusEpg,
-      &.activeTab {
-        background: rgba(252, 185, 3, 1);
-        box-shadow: 0 0 10px #fcb903;
-        border-radius: 0.4rem;
-        color: $text-color;
-      }
-    }
-  }
 
   .top-wrap {
     display: flex;
@@ -99,6 +68,75 @@ body,
           opacity: 0.6;
         }
       }
+    }
+  }
+
+  // 页面底部按钮组
+  .page-bottom-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.4rem;
+  }
+
+  .tabs-wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.4rem;
+
+    .tabs-item {
+      background: none;
+      color: $text-color;
+      font-size: 0.36rem;
+      padding: 0 0.2rem;
+      margin-left: 0.1rem;
+      margin-right: 1rem;
+      outline: none;
+      height: 0.8rem;
+      line-height: 0.8rem;
+
+      &.focusEpg,
+      &.activeTab {
+        background: rgba(252, 185, 3, 1);
+        box-shadow: 0 0 10px #fcb903;
+        border-radius: 0.4rem;
+        color: $text-color;
+      }
+    }
+  }
+
+
+
+  .epg-button {
+    border-radius: 0.38rem;
+    font-size: 0.34rem;
+    color: $text-color;
+    border: 0;
+    line-height: 0.75rem;
+    min-width: 1.82rem;
+    padding: 0 0.2rem;
+    box-sizing: border-box;
+
+    &+.epg-button {
+      margin-left: 0.4rem;
+    }
+
+    &:focus,
+    &:hover {
+      color: inherit;
+      border-color: inherit;
+      opacity: .8;
+    }
+
+    &.epgCancel {
+      background: rgb(72, 75, 97);
+    }
+
+    &.epgActive,
+    &.focusEpg {
+      background: rgba(252, 185, 3, 1);
+      box-shadow: 0 0 10px #FCB903;
+      color: #3B3B3B;
     }
   }
 }

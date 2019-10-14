@@ -16,8 +16,9 @@ import { addZero } from '@/utils';
         <li v-for="item in tabContentData[activeTab].top"
             :key="item.id"
             v-items
+            @click="$router.push({name:item.type})"
             class="demand-item">
-          <div class="demand-img ">
+          <div class="demand-img">
             <img :src="item.imgSrc"
                  alt="">
           </div>
@@ -27,6 +28,7 @@ import { addZero } from '@/utils';
         <li v-for="item in tabContentData[activeTab].more"
             :key="item.id"
             v-items
+            @click="$router.push({name:item.type})"
             class="demand-item">
           <div class="demand-img">
             <img :src="item.imgSrc"
@@ -45,7 +47,6 @@ import { addZero } from '@/utils';
 export default {
   data () {
     return {
-
       activeTab: 'first',
       tabData: [
         {
@@ -71,28 +72,34 @@ export default {
           top: [
             {
               id: 1,
-              imgSrc: require('@/assets/images/demand/top1.png')
+              imgSrc: require('@/assets/images/demand/top1.png'),
+              type: 'drama'
             },
             {
               id: 2,
-              imgSrc: require('@/assets/images/demand/top2.png')
+              imgSrc: require('@/assets/images/demand/top2.png'),
+              type: 'film'
             },],
           more: [
             {
               id: 1,
-              imgSrc: require('@/assets/images/demand/3.png')
+              imgSrc: require('@/assets/images/demand/3.png'),
+              type: 'drama'
             },
             {
               id: 2,
-              imgSrc: require('@/assets/images/demand/4.png')
+              imgSrc: require('@/assets/images/demand/4.png'),
+              type: 'drama'
             },
             {
               id: 3,
-              imgSrc: require('@/assets/images/demand/5.png')
+              imgSrc: require('@/assets/images/demand/5.png'),
+              type: 'drama'
             },
             {
               id: 4,
-              imgSrc: require('@/assets/images/demand/6.png')
+              imgSrc: require('@/assets/images/demand/6.png'),
+              type: 'drama'
             },
           ]
         },
@@ -100,56 +107,68 @@ export default {
           top: [
             {
               id: 2,
-              imgSrc: require('@/assets/images/demand/top2.png')
+              imgSrc: require('@/assets/images/demand/top2.png'),
+              type: 'drama'
             },
             {
               id: 1,
-              imgSrc: require('@/assets/images/demand/top1.png')
+              imgSrc: require('@/assets/images/demand/top1.png'),
+              type: 'drama'
             },],
           more: [
             {
               id: 3,
-              imgSrc: require('@/assets/images/demand/3.png')
+              imgSrc: require('@/assets/images/demand/3.png'),
+              type: 'drama'
             },
             {
               id: 4,
-              imgSrc: require('@/assets/images/demand/4.png')
+              imgSrc: require('@/assets/images/demand/4.png'),
+              type: 'drama'
             },
             {
               id: 5,
-              imgSrc: require('@/assets/images/demand/5.png')
+              imgSrc: require('@/assets/images/demand/5.png'),
+              type: 'drama'
             },
             {
               id: 6,
-              imgSrc: require('@/assets/images/demand/6.png')
+              imgSrc: require('@/assets/images/demand/6.png'),
+              type: 'drama'
             }]
         },
         third: {
           top: [
             {
               id: 1,
-              imgSrc: require('@/assets/images/demand/top1.png')
+              imgSrc: require('@/assets/images/demand/top1.png'),
+              type: 'drama'
             },
             {
               id: 2,
-              imgSrc: require('@/assets/images/demand/top2.png')
+              imgSrc: require('@/assets/images/demand/top2.png'),
+              type: 'drama'
             },],
           more: [
             {
               id: 3,
-              imgSrc: require('@/assets/images/demand/3.png')
+              imgSrc: require('@/assets/images/demand/3.png'),
+              type: 'drama'
             },
             {
               id: 4,
-              imgSrc: require('@/assets/images/demand/4.png')
+              imgSrc: require('@/assets/images/demand/4.png'),
+              type: 'drama'
             },
             {
               id: 5,
-              imgSrc: require('@/assets/images/demand/5.png')
+              imgSrc: require('@/assets/images/demand/5.png'),
+              type: 'drama'
             },
             {
               id: 6,
-              imgSrc: require('@/assets/images/demand/6.png')
+              imgSrc: require('@/assets/images/demand/6.png'),
+              type: 'drama'
             }]
         },
         fourth: {
@@ -157,28 +176,34 @@ export default {
 
             {
               id: 2,
-              imgSrc: require('@/assets/images/demand/top2.png')
+              imgSrc: require('@/assets/images/demand/top2.png'),
+              type: 'drama'
             },
             {
               id: 1,
-              imgSrc: require('@/assets/images/demand/top1.png')
+              imgSrc: require('@/assets/images/demand/top1.png'),
+              type: 'drama'
             },],
           more: [
             {
               id: 3,
-              imgSrc: require('@/assets/images/demand/3.png')
+              imgSrc: require('@/assets/images/demand/3.png'),
+              type: 'drama'
             },
             {
               id: 4,
-              imgSrc: require('@/assets/images/demand/4.png')
+              imgSrc: require('@/assets/images/demand/4.png'),
+              type: 'drama'
             },
             {
               id: 5,
-              imgSrc: require('@/assets/images/demand/5.png')
+              imgSrc: require('@/assets/images/demand/5.png'),
+              type: 'drama'
             },
             {
               id: 6,
-              imgSrc: require('@/assets/images/demand/6.png')
+              imgSrc: require('@/assets/images/demand/6.png'),
+              type: 'drama'
             }]
         }
       },

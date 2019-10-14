@@ -6,7 +6,7 @@
       <p class="error-title">播放错误</p>
       <p class="error-desc">网络异常</p>
       <div class="error-btns-wrap">
-        <el-button type="epgCancel">确定</el-button>
+        <button class="epg-button epgCancel">确定</button>
       </div>
     </div>
     <div class="error-box"
@@ -15,10 +15,10 @@
       <p class="error-desc">本次节目需要按次点播，付费收看<br>点播后立即生效<br>
         该节目在订购有效期内（120小时）<br>可不限次数观看订阅节目内容</p>
       <div class="error-btns-wrap">
-        <el-button type="epgCancel"
-                   v-items>5元/次</el-button>
-        <el-button type="epgCancel"
-                   v-items="{default:true}">返回</el-button>
+        <button class="epg-button epgCancel"
+                v-items>5元/次</button>
+        <button class="epg-button epgCancel"
+                v-items="{default:true}">返回</button>
       </div>
     </div>
   </div>

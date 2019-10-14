@@ -5,7 +5,7 @@
       <div class="top-right">
         <span class="back-icon right-text"
               v-items
-              @click="$router.push({name:'index',query:{type:'hotel'}})">
+              @click="$router.go(-1)">
           返回
         </span>
       </div>
@@ -39,7 +39,8 @@
           </p>
           <div class="info-btns">
             <div class="drama-info-btn play-btn"
-                 v-items="{default:true}">
+                 v-items="{default:true}"
+                 ref="playItem">
               <span class="play-icon"></span>
               <p class="btn-text">播放</p>
             </div>
@@ -60,6 +61,7 @@
               v-items
               @focus="activePart=index"
               @down="partDown"
+              @up="$service.move($refs.playItem)"
               :ref="`part${key}`">
             {{key}}
           </li>

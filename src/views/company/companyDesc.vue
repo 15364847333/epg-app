@@ -6,6 +6,7 @@
            :key="tab.name"
            v-items="tab.epgConfig"
            @focus="activeTab=tab.name"
+           @down="downTab"
            class="tabs-item"
            :class="{'activeTab':activeTab==tab.name}"
            :ref="tab.name+'Tab'">{{tab.label}}</div>
@@ -31,28 +32,37 @@
     <div class="company-box"
          v-if="activeTab=='third'">
       <swiper :options="swiperOption"
-              class="honor-wrap">
-        <swiper-slide v-for="item in honorData"
+              class="honor-wrap"
+              ref="mySwiper">
+        <swiper-slide v-for="(item,index) in honorData"
                       :key="item.id">
-          <div class="honorImg">
+          <div class="honorImg"
+               v-items
+               :ref="`honor${index}`"
+               @left="moveLeft"
+               @right="moveRight"
+               @down="moveDown"
+               @up="moveUp"
+               @focus="activeHonor=index">
             <img :src="item.imgSrc||''"
-                 alt="">
+                 alt="">{{index}}
           </div>
         </swiper-slide>
         <div class="swiper-button-prev"
              slot="button-prev"></div>
         <div class="swiper-button-next"
              slot="button-next"></div>
-
       </swiper>
     </div>
     <div class="page-bottom-btns">
-      <el-button type="epgCancel"
-                 v-items
-                 @click="$router.push({name:'companyVideo'})">看看视频宣传</el-button>
-      <el-button type="epgCancel"
-                 v-items
-                 @click="$router.push({name:'index',query:{type:'company'}})">返回主页</el-button>
+      <button class="epg-button epgCancel"
+              v-items
+              @click="$router.push({name:'companyVideo'})"
+              ref="toVideo"
+              @left="leftToVideo">看看视频宣传</button>
+      <button class="epg-button epgCancel"
+              v-items
+              @click="$router.push({name:'index',query:{type:'company'}})">返回主页</button>
     </div>
   </div>
 </template>
@@ -89,6 +99,7 @@ export default {
           prevEl: '.swiper-button-prev'
         }
       },
+      activeHonor: 0,
       honorData: [
         { id: 1, imgSrc: require('@/assets/images/company/honor.png') },
         { id: 2, imgSrc: require('@/assets/images/company/honor.png') },
@@ -100,6 +111,42 @@ export default {
     //页面加载后，移动到默认焦点
     this.$service.move(this.$service.pointer)
   },
+  methods: {
+    downTab () {
+      if (this.activeTab == 'third') {
+        this.$service.move(this.$refs[`honor${this.activeHonor}`][0])
+      } else {
+        this.$service.move('down')
+      }
+    },
+    moveUp () {
+      this.$service.move(this.$refs[`thirdTab`][0])
+    },
+    moveDown () {
+      this.$service.move(this.$refs.toVideo)
+    },
+    moveLeft () {
+      if (this.activeHonor == 0) {
+        this.$service.move(this.$refs[`secondTab`][0])
+      } else {
+        let swiper = this.$refs.mySwiper.swiper;
+        swiper.slidePrev()
+        this.$service.move('left')
+      }
+    },
+    moveRight () {
+      if (this.activeHonor == this.honorData.length - 1) {
+        this.$service.move(this.$refs.toVideo)
+      } else {
+        let swiper = this.$refs.mySwiper.swiper;
+        swiper.slideNext()
+        this.$service.move(this.$refs[`honor${this.activeHonor + 1}`][0])
+      }
+    },
+    leftToVideo () {
+      this.$service.move(this.$refs[`${this.activeTab}Tab`][0])
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -152,13 +199,15 @@ export default {
           width: 100%;
           height: 100%;
         }
+        &.focusEpg {
+          //TODO 待确定荣誉照片获取焦点样式
+          opacity: 0.9;
+        }
       }
-      .honorName {
-        color: rgba(250, 193, 39, 1);
-        font-size: 0.26rem;
-      }
+
       .swiper-slide {
         text-align: center;
+        width: 100% !important;
       }
       .swiper-button-prev,
       .swiper-button-next {
