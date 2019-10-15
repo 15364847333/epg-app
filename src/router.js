@@ -52,17 +52,6 @@ const routes = [
     path: '/companyVideo',
     name: 'companyVideo',
     component: () => import('@/views/company/companyVideo.vue'),
-  },
-  /************************************************* 出错页 *************************************************/
-  {//出错页
-    path: '/errorPage',
-    name: 'errorPage',
-    component: () => import('@/views/errorPage.vue'),
-  },
-  {//测试
-    path: '/test',
-    name: 'test',
-    component: () => import('@/views/test.vue'),
   }
 ]
 

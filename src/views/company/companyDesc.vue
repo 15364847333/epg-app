@@ -45,7 +45,7 @@
                @up="moveUp"
                @focus="activeHonor=index">
             <img :src="item.imgSrc||''"
-                 alt="">{{index}}
+                 alt="">
           </div>
         </swiper-slide>
         <div class="swiper-button-prev"
@@ -64,6 +64,7 @@
               v-items
               @click="$router.push({name:'index',query:{type:'company'}})">返回主页</button>
     </div>
+    <error-box></error-box>
   </div>
 </template>
 <script>
@@ -192,6 +193,7 @@ export default {
     }
     .honor-wrap {
       padding: 0 2rem;
+      height: 4.8rem;
       .honorImg {
         width: 100%;
         height: 4.5rem;
@@ -201,13 +203,13 @@ export default {
         }
         &.focusEpg {
           //TODO 待确定荣誉照片获取焦点样式
-          opacity: 0.9;
+          transform: scale(1.02);
         }
       }
-
       .swiper-slide {
-        text-align: center;
         width: 100% !important;
+        display: flex;
+        align-items: center;
       }
       .swiper-button-prev,
       .swiper-button-next {

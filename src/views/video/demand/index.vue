@@ -1,4 +1,3 @@
-import { addZero } from '@/utils';
 <template>
   <div class="demand-page">
     <top-wrap></top-wrap>
@@ -98,6 +97,31 @@ export default {
             },
             {
               id: 4,
+              imgSrc: require('@/assets/images/demand/6.png'),
+              type: 'drama'
+            },
+            {
+              id: 5,
+              imgSrc: require('@/assets/images/demand/5.png'),
+              type: 'drama'
+            },
+            {
+              id: 6,
+              imgSrc: require('@/assets/images/demand/6.png'),
+              type: 'drama'
+            },
+            {
+              id: 7,
+              imgSrc: require('@/assets/images/demand/6.png'),
+              type: 'drama'
+            },
+            {
+              id: 8,
+              imgSrc: require('@/assets/images/demand/5.png'),
+              type: 'drama'
+            },
+            {
+              id: 9,
               imgSrc: require('@/assets/images/demand/6.png'),
               type: 'drama'
             },
@@ -214,9 +238,6 @@ export default {
     //页面加载后，移动到默认焦点
     this.$service.move(this.$service.pointer)
   },
-  created () {
-
-  },
   methods: {
     moveLeft () {
       let swiper = this.$refs.mySwiper.swiper;
@@ -240,6 +261,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .demand-page {
+  height: 100%;
+  overflow: auto;
   .tabs-item {
     min-width: 2rem;
     text-align: center;
@@ -247,8 +270,6 @@ export default {
     margin-right: 0 !important;
   }
   .demand-box {
-    height: 8rem;
-    overflow: auto;
     .demand-list {
       display: flex;
       flex-wrap: wrap;
@@ -270,9 +291,6 @@ export default {
         }
         &.focusEpg {
           transform: scale(1.03);
-          .demand-img {
-            border: 1px solid rgba(255, 170, 0, 0.3);
-          }
         }
       }
       &.more {

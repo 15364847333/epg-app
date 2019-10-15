@@ -1,29 +1,19 @@
 # epg_app
 
-## Project setup
+> 启动
+
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
 
-### Compiles and minifies for production
+> 打包
+
 ```
 npm run build
 ```
 
-### Run your tests
-```
-npm run test
-```
+> 所用插件
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- 焦点管理:[vue-epg](https://www.kancloud.cn/koala-gc/vue-epg/758916)
+- vue-awesome-swiper:[API 文档](https://3.swiper.com.cn/api/index.html)、[在线实例](https://surmon-china.github.io/vue-awesome-swiper/)

@@ -5,6 +5,7 @@
       <div class="top-right">
         <span class="back-icon right-text"
               v-items
+              @down="$service.move($refs.playItem)"
               @click="$router.go(-1)">
           返回
         </span>
@@ -40,7 +41,8 @@
           <div class="info-btns">
             <div class="film-info-btn play-btn"
                  v-items="{default:true}"
-                 ref="playItem">
+                 ref="playItem"
+                 @click="playFilm">
               <span class="play-icon"></span>
               <p class="btn-text">播放</p>
             </div>
@@ -54,21 +56,24 @@
       </div>
       <div class="recommend-wrap">
         <p class="part-title">大家都在看</p>
-        <el-row class="recommend-list">
-          <el-col :span="4"
-                  v-for="item in recommendList"
-                  :key="item.id"
-                  class="recommend-li">
+        <ul class="recommend-list">
+          <li :span="4"
+              v-for="item in recommendList"
+              :key="item.id"
+              class="recommend-li">
             <a class="recommend-item"
                v-items
                @up="$service.move($refs.playItem)">
               <img :src="item.coverImg"
                    alt="">
             </a>
-          </el-col>
-        </el-row>
+          </li>
+        </ul>
       </div>
     </div>
+    <error-box :errorType="errorType"
+               v-if="errorVisiable"
+               @closeBox="closeErrorBox"></error-box>
   </div>
 </template>
 <script>
@@ -76,6 +81,8 @@
 export default {
   data () {
     return {
+      errorVisiable: false,
+      errorType: 'pay',
       filmData: {
         id: 1,
         title: '复仇者联盟4：终局之战',
@@ -141,12 +148,23 @@ export default {
   },
 
   methods: {
-
+    playFilm () {
+      let self = this;
+      self.errorType = 'pay'//网络net;支付pay
+      self.errorVisiable = true
+    },
+    closeErrorBox () {
+      let self = this;
+      self.errorVisiable = false;
+      self.$service.move(this.$refs.playItem)
+    }
   }
 }
 </script>
 <style lang="scss" scoped>
 .film-page {
+  height: 100%;
+  overflow: auto;
   .part-title {
     font-size: 0.38rem;
     margin: 0.35rem 0 0.18rem 0;
@@ -255,7 +273,11 @@ export default {
 
     .recommend-wrap {
       .recommend-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         .recommend-li {
+          width: 16.6%;
           margin-bottom: 0.2rem;
           .recommend-item {
             width: 2.6rem;

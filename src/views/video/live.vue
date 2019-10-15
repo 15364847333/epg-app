@@ -13,11 +13,11 @@
     </div>
     <div class="live-wrap">
       <div class="channel-wrap">
-        <el-row class="channel-list">
-          <el-col v-for="(item,index) in channelData"
-                  :key="item.id"
-                  :span="12"
-                  class="channel-item">
+        <ul class="channel-list">
+          <li v-for="(item,index) in channelData"
+              :key="item.id"
+              :span="12"
+              class="channel-item">
             <div class="channel-detail"
                  v-items="item.epgConfig"
                  @click="curChannel=item"
@@ -29,8 +29,8 @@
                    alt="">
               <span>{{item.name}}</span>
             </div>
-          </el-col>
-        </el-row>
+          </li>
+        </ul>
         <div class="btns-wrap">
           <button class="epg-button epgCancel"
                   v-items
@@ -114,6 +114,10 @@ export default {
     margin-top: 0.35rem;
     .channel-wrap {
       .channel-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
         .channel-item {
           margin-bottom: 0.15rem;
           .channel-detail {
@@ -153,6 +157,7 @@ export default {
       }
     }
     .channel-view {
+      margin-left: 1.3rem;
       .preview-wrap {
         margin-bottom: 0.8rem;
         width: 8.4rem;

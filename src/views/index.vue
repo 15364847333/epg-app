@@ -1,12 +1,9 @@
 <template>
   <div class="home-page">
     <top-wrap></top-wrap>
-    <el-row type="flex"
-            justify="space-between"
-            class="home-list">
-      <el-col :span="6"
-              v-for="item in pageConfig"
-              :key="item.key">
+    <ul class="home-list">
+      <li v-for="item in pageConfig"
+          :key="item.key">
         <div class="home-item"
              @click="$router.push('/'+(item.toPage||item.key))"
              v-items="item.epgConfig">
@@ -20,8 +17,8 @@
             <span class="desc-text">{{item.title}}</span>
           </div>
         </div>
-      </el-col>
-    </el-row>
+      </li>
+    </ul>
   </div>
 </template>
 <script>
@@ -74,6 +71,8 @@ export default {
 <style lang="scss" scoped>
 .home-page {
   .home-list {
+    display: flex;
+    justify-content: space-between;
     margin-top: 1rem;
     height: 6.9rem;
     .home-item {
@@ -107,7 +106,8 @@ export default {
         }
       }
       &.focusEpg {
-        border: 1px solid rgba(255, 170, 0, 0.3);
+        border: 0.02rem solid rgba(255, 170, 0, 0.3);
+        box-shadow: 0 0 10px #fcb903;
         transform: scale(1.05);
       }
     }

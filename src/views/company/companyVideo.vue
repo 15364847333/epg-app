@@ -8,33 +8,44 @@
              v-items="tab.epgConfig"
              @focus="activeTab=tab.name"
              class="tabs-item"
+             @down="downTab"
              :class="{'activeTab':activeTab==tab.name}"
              :ref="tab.name+'Tab'">{{tab.label}}</div>
       </div>
       <div class="swiper-wrap"
            v-if="activeTab=='first'">
         <swiper :options="swiperOptionTop"
-                class="gallery-left"
-                ref="swiperLeft">
-          <swiper-slide v-for="item in videoList"
+                class="gallery-top"
+                ref="swiperTop">
+          <swiper-slide v-for="(item,index) in videoList"
                         :key="item.id"
                         class="videoTopItem">
             <video :src="item.videoSrc"
                    controls="controls"
-                   :id="'video'+item.id">
+                   :id="'video'+item.id"
+                   :poster="item.imgSrc">
               您的浏览器不支持 video 标签。
             </video>
+            <!-- <img :src="item.imgSrc"
+                 alt=""> -->
             <div class="playIcon"
-                 @click="FullScreen('video'+item.id,item.videoSrc)"></div>
+                 v-items
+                 :ref="`playIcon${index}`"
+                 @click="fullScreen('video'+item.id,item.videoSrc)"></div>
           </swiper-slide>
         </swiper>
         <swiper :options="swiperOptionThumbs"
                 class="gallery-thumbs"
                 ref="swiperThumbs">
-          <swiper-slide v-for="item in videoList"
+          <swiper-slide v-for="(item,index) in videoList"
                         :key="item.id"
                         class="videoItem">
             <img :src="item.imgSrc"
+                 v-items
+                 :ref="`thumbs${index}`"
+                 @down="thumbsDown"
+                 @up="thumbsUp"
+                 @click="fullScreen('video'+item.id,item.videoSrc)"
                  alt="">
           </swiper-slide>
           <div class="swiper-button-next"
@@ -63,8 +74,10 @@
              id="fullVideo"></video>
       <div class="controlsWrap">
         <div class="backIcon"
+             v-items
              @click="backPage">返回</div>
         <div class="playIcon"
+             v-items
              @click="playVideo"></div>
       </div>
     </div>
@@ -75,6 +88,7 @@ export default {
   data () {
     return {
       activeTab: 'first',
+      activeVideoIndex: 0,
       tabData: [
         {
           name: 'first',
@@ -121,31 +135,38 @@ export default {
         }
       ],
       swiperOptionTop: {
-        spaceBetween: 100,
+        spaceBetween: 10,
+        loop: true,
+        loopedSlides: 5,
+
       },
       swiperOptionThumbs: {
-        spaceBetween: 20,
-        slidesPerView: 3,
         direction: 'vertical',
+        spaceBetween: 10,
+        slidesPerView: 3,
+        touchRatio: 0.2,
+        loop: true,
+        loopedSlides: 5,
+        slideToClickedSlide: true,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
         }
-      },
+      }
     }
   },
   mounted () {
     this.$nextTick(() => {
-      const swiperLeft = this.$refs.swiperLeft.swiper
+      const swiperTop = this.$refs.swiperTop.swiper
       const swiperThumbs = this.$refs.swiperThumbs.swiper
-      swiperLeft.controller.control = swiperThumbs
-      swiperThumbs.controller.control = swiperLeft
+      swiperTop.controller.control = swiperThumbs
+      swiperThumbs.controller.control = swiperTop
       //页面加载后，移动到默认焦点
       this.$service.move(this.$service.pointer)
     })
   },
   methods: {
-    FullScreen (id, videoSrc) {
+    fullScreen (id, videoSrc) {
       let self = this;
       self.fullVideoVisiable = true;
       self.fullVideoSrc = videoSrc;
@@ -169,6 +190,33 @@ export default {
       self.fullVideoVisiable = false;
       let video = document.getElementById('fullVideo');
       video.pause();
+    },
+    downTab () {
+      let self = this;
+      if (self.activeTab == 'first') {
+        self.$service.move(self.$refs[`thumbs0`][0])
+      } else {
+        self.$service.move('down')
+      }
+    },
+    thumbsUp () {
+      let self = this;
+      let swiper1 = self.$refs.swiperTop.swiper;
+      let swiper2 = self.$refs.swiperTop.swiper;
+      let index = swiper1.realIndex == 0 ? self.videoList.length - 1 : swiper1.realIndex - 1
+      self.activeVideoIndex = index;
+      self.$service.move(self.$refs[`thumbs${index}`][0])
+      swiper2.slideTo(index)
+      // swiper2.slidePrev()
+    },
+    thumbsDown () {
+      let self = this;
+      let swiper1 = self.$refs.swiperTop.swiper;
+      let swiper2 = self.$refs.swiperTop.swiper;
+      let index = swiper1.realIndex == self.videoList.length - 1 ? 0 : swiper1.realIndex + 1
+      self.activeVideoIndex = index;
+      self.$service.move(self.$refs[`thumbs${index}`][0])
+      swiper2.slideNext()
     }
   }
 }
@@ -184,47 +232,45 @@ export default {
     display: flex;
     height: 6.08rem;
     align-items: center;
-    justify-content: space-around;
-    .gallery-left {
-      width: 15rem;
+    .gallery-top {
+      width: 78%;
+      max-width: 15rem;
       height: 100%;
-      .videoTopItem {
-        width: 100% !important;
-        border-radius: 0.08rem;
-        overflow: hidden;
-        position: relative;
-        img,
-        video {
-          width: 100%;
-          height: 100%;
-          outline: none;
-        }
-        .playIcon {
-          position: absolute;
-          width: 1.26rem;
-          height: 1.26rem;
-          background: url("../../assets/icons/company/play.png") no-repeat
-            center;
-          background-size: cover;
-          left: 50%;
-          top: 50%;
-        }
-      }
     }
     .gallery-thumbs {
+      width: 1.8rem;
       height: 100%;
       box-sizing: border-box;
-      border-radius: 0.08rem;
-      overflow: hidden;
-      .videoItem {
-        width: 1.8rem;
-        height: 1.8rem !important;
+      .swiper-slide {
+        width: 25%;
+        height: 100%;
+        opacity: 0.4;
+      }
+      .swiper-slide-active {
+        opacity: 1;
+      }
+    }
+
+    .swiper-wrapper {
+      width: 100%;
+      img,
+      video {
+        width: 100%;
+        height: 100%;
         border-radius: 0.08rem;
-        overflow: hidden;
-        img {
-          width: 100%;
-          height: 100%;
-        }
+      }
+      .videoTopItem,
+      .videoItem {
+        width: 100%;
+      }
+      .playIcon {
+        position: absolute;
+        width: 1.26rem;
+        height: 1.26rem;
+        background: url("../../assets/icons/company/play.png") no-repeat center;
+        background-size: cover;
+        left: 50%;
+        top: 50%;
       }
     }
     .swiper-button-prev,
@@ -232,6 +278,7 @@ export default {
       background-size: 0.36rem;
       width: 0.36rem;
       height: 0.36rem;
+      outline: none;
     }
     .swiper-button-prev {
       background-image: url("../../assets/icons/company/prev.png");
